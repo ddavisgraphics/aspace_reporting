@@ -1,2 +1,11 @@
-exports/
+# ingore exported files
+exports
+
+# ignore ds store
 .DS_Store
+
+# ignore mysql folder
+mysql
+
+# ignore docker scripts 
+docker-reset.sh 

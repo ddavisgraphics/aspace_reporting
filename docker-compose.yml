@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7.16
+    container_name: aspace_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=archivesspace
+      - MYSQL_USER=archivesspace
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - ./mysql:/var/lib/mysql
