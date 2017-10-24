@@ -9,3 +9,6 @@ mysql
 
 # ignore docker scripts 
 docker-reset.sh 
+
+# ignore database dumps 
+databases
