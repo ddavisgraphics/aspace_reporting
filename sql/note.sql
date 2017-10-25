@@ -1,0 +1,1 @@
+SELECT notes FROM `note` WHERE `id`=234659 LIMIT 1;

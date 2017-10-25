@@ -7,10 +7,10 @@ class Database
   def initialize 
     @db_host  = "127.0.0.1"
     @db_user  = "root"
-    @db_pass  = ""
+    @db_pass  = "123456"
     @db_name = "archivesspace"
     @db_port = "3306"
-    self.connect 
+    self.connect
   end
 
   # connect to db 
@@ -28,5 +28,9 @@ class Database
   # db queries 
   def query sql_statement
     @connection.query(sql_statement)
+  end
+
+  def escape str
+    @connection.escape(str)
   end
 end

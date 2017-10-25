@@ -27,9 +27,15 @@ SELECT
     `agent_contact`.post_code,
     `agent_contact`.email,
     `agent_contact`.note, 
-    `telephone`.number, 
+    `telephone`.number,
+    `spawned_rlshp`.resource_id, 
     `resource`.ead_id, 
-    `resource`.title
+    `resource`.title, 
+    ud.boolean_1 AS "boolean 1",
+    ud.real_1 AS "User Defined - Real 1", 
+    ud.real_2 AS "User Defined - Real 2", 
+    ud.real_3 AS "User Defined - Real 3", 
+    ud.text_1 AS "User Defined - Text 1" 
 FROM `accession`
   LEFT JOIN `date`
     ON `accession`.id = `date`.accession_id
@@ -52,4 +58,6 @@ FROM `accession`
   LEFT JOIN `enumeration_value` e2
     ON `accession`.resource_type_id=e2.id
   LEFT JOIN `enumeration_value` e3
-    ON `linked_agents_rlshp`.role_id=e3.id;
+    ON `linked_agents_rlshp`.role_id=e3.id
+  LEFT JOIN `user_defined` ud
+    ON `accession`.id=ud.id; 
