@@ -12,3 +12,6 @@ docker-reset.sh
 
 # ignore database dumps 
 databases
+
+# ingore database
+exports/*
